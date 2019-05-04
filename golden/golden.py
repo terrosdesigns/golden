@@ -8,7 +8,7 @@ def extractPageContent(url):
         page = requests.get(url)
     except:
         print("Error while trying to get page")
-        sys.exit()
+        # sys.exit()
     soup = BeautifulSoup(page.text, 'html.parser')
     return soup
 
@@ -37,12 +37,9 @@ def download(user_query):
         page = requests.get(search_url)
     except:
         print("Error while trying to get page")
-        sys.exit()
+        # sys.exit()
     soup = BeautifulSoup(page.text, 'html.parser')
     return soup
-    # description = soup.find_all('p')[0].get_text()
-    # print(description)
-    # return description
 
 def summary(soup, sentences=0):
     summary = []
@@ -61,7 +58,7 @@ def timeline(soup, events=0):
         try:
             event_div = soup.findAll("div", {"class": "TimelineEvent"})[i]
         except:
-            print("No more events. Breaking.")
+            print("No more events.")
             break
         event = {}
         try:
@@ -69,7 +66,7 @@ def timeline(soup, events=0):
             event["subtitle"] = event_div.findAll("h3")[0].get_text()
             event["content"] = event_div.findAll("p")[0].get_text()
         except:
-            print("No more events. Breaking.")
+            print("No more events.")
             break
         events_list.append(event)
         i+=1
