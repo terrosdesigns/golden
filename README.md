@@ -4,13 +4,17 @@ Tech and startup data extraction in Python.
 
 Extract company summaries, timeline of recent events, key people and more.
 
-```
-import golden
+```python
+>>> import golden
+>>> search = golden.download('facebook')
 
-search = golden.download('facebook')
+>>> golden.summary(search, sentences=3)
+# Apple Inc. is a public company designing and selling personal computers, smartphones, consumer electronics, and software. Its headquarters is located in Cupertino, California and it was founded in 1976.﻿Apple Inc. is a California-based electronics company with a focus producing on consumer devices.
 
-golden.summary(search, sentences=3)
-
-golden.timeline(search, events=2)
+>>> events = golden.timeline(search)
+>>> for event in events:
+>>>     print(event["date"], " : ", event["subtitle"], "\n", event["content"])
+# March 25, 2019  :  Apple Card
+# On March 25, 2019 during their keynote event Apple, in partnership with Goldman Sachs and Mastercard, announced Apple Card. A credit card by Apple with no fees—no annual, cash-advance, over-the-limit, international, or late fees— thats gives Apple users the ability to sign up for Apple Card using the Apple Wallet application.
 
 ```
