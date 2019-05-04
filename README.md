@@ -4,6 +4,11 @@ Tech and startup data extraction in Python.
 
 Extract company summaries, timeline of recent events, key people and more.
 
+1/ Clone repository
+```
+git clone git@github.com:terrosdesigns/golden.git
+```
+
 ```python
 >>> import golden
 >>> search = golden.download('Apple')
