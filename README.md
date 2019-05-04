@@ -9,6 +9,8 @@ Extract company summaries, timeline of recent events, key people and more.
 git clone git@github.com:terrosdesigns/golden.git
 ```
 
+2/ Extract key tech and startup data !
+
 ```python
 >>> import golden
 >>> search = golden.download('Apple')
