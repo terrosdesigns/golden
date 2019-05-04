@@ -6,7 +6,7 @@ Extract company summaries, timeline of recent events, key people and more.
 
 ```python
 >>> import golden
->>> search = golden.download('apple')
+>>> search = golden.download('Apple')
 
 >>> golden.summary(search, sentences=1)
 # Apple Inc. is a public company designing and selling personal computers, smartphones, consumer electronics, and software. Its headquarters is located in Cupertino, California and it was founded in 1976.﻿Apple Inc. is a California-based electronics company with a focus producing on consumer devices.
