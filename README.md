@@ -1,2 +1,3 @@
 # golden
-Python library to extract tech companies key data.
+
+Tech and startup data extraction in Python.
