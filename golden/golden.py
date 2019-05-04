@@ -44,42 +44,6 @@ def download(user_query):
     # print(description)
     # return description
 
-def summary_old(user_query, sentences=0):
-    query = str(user_query)
-    soup=download(query)
-    summary = []
-    i = 0
-    while i <= sentences:
-        summary.append(soup.find_all('p')[i].get_text())
-        i+=1
-    description = "".join(summary)
-    return description
-
-def timeline_old(user_query, events=0):
-    query = str(user_query)
-    soup=download(query)
-    timeline_block = soup.findAll("div", {"class": "EntityTimeline"})
-    events_list = []
-    i=0
-    while i <= events:
-        try:
-            event_div = soup.findAll("div", {"class": "TimelineEvent"})[i]
-        except:
-            print("No more events. Breaking.")
-            break
-        event = {}
-        try:
-            event["date"] = event_div.findAll("div", {"class": "TimelineEvent__date"})[i].get_text()
-            event["subtitle"] = event_div.findAll("h3")[0].get_text()
-            event["content"] = event_div.findAll("p")[0].get_text()
-        except:
-            print("No more events. Breaking.")
-            break
-        events_list.append(event)
-        i+=1
-    # events_string = "\n".join(events_list)
-    return events_list
-
 def summary(soup, sentences=0):
     summary = []
     i = 0
