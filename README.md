@@ -15,8 +15,11 @@ git clone git@github.com:terrosdesigns/golden.git
 >>> import golden
 >>> search = golden.download('Apple')
 
->>> golden.summary(search, sentences=1)
+>>> golden.summary(search)
 # Apple Inc. is a public company designing and selling personal computers, smartphones, consumer electronics, and software. Its headquarters is located in Cupertino, California and it was founded in 1976.﻿Apple Inc. is a California-based electronics company with a focus producing on consumer devices.
+
+>>> golden.content(search, sentences=3)
+#'﻿Apple Inc. is a California-based electronics company with a focus producing on consumer devices. ﻿Products﻿Products and devices produced by Apple Inc. include iPad, iPhone, AirPods,Apple Watch, HomePod, and MacBook.﻿ Each product can give users access to one or more forms of media or technology including television, music, data storage, and computer applications.The products run on the Mac operating system, which has special features thare not available on non-Mac systems. Furthermore, the devices use continuity, which allows for all the devices owned by a user to beconnected.﻿﻿﻿The company also produces software as a service and media options.'
 
 >>> events = golden.timeline(search, events=1)
 >>> for event in events:
