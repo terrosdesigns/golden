@@ -41,11 +41,16 @@ def download(user_query):
     soup = BeautifulSoup(page.text, 'html.parser')
     return soup
 
+def title(soup):
+    title = soup.find("h1", {"class": "TopicDetail__header__headline--inner"}).get_text()
+    return title
+
 def summary(soup, sentences=0):
     summary = []
     i = 0
     while i <= sentences:
-        summary.append(soup.find_all('p')[i].get_text())
+        # summary.append(soup.find_all('p')[i].get_text())
+        summary.append(soup.findAll("div", {"class": "TopicDetail__abstract"})[i].get_text())
         i+=1
     description = "".join(summary)
     return description
@@ -55,6 +60,9 @@ def timeline(soup, events=0):
     events_list = []
     i=0
     while i <= events:
+        if not soup.findAll("div", {"class": "TimelineEvent"}):
+            print("No events to display.")
+            break
         try:
             event_div = soup.findAll("div", {"class": "TimelineEvent"})[i]
         except:
@@ -71,4 +79,5 @@ def timeline(soup, events=0):
         events_list.append(event)
         i+=1
     # events_string = "\n".join(events_list)
-    return events_list
+    if events_list:
+        return events_list

@@ -25,3 +25,12 @@ git clone git@github.com:terrosdesigns/golden.git
 # On March 25, 2019 during their keynote event Apple, in partnership with Goldman Sachs and Mastercard, announced Apple Card. A credit card by Apple with no fees—no annual, cash-advance, over-the-limit, international, or late fees— thats gives Apple users the ability to sign up for Apple Card using the Apple Wallet application.
 
 ```
+
+
+TO DO
+- Add new queries :
+    => People
+    => Commpany Url
+    => Products
+    => Country
+- Improve summary query output
