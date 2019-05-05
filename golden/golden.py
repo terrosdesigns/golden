@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 # from proxies import proxies
 import sys
+import nltk
+from nltk import sent_tokenize
 
 def extractPageContent(url):
     try:
@@ -36,8 +38,7 @@ def download(user_query):
     try:
         page = requests.get(search_url)
     except:
-        print("Error while trying to get page")
-        # sys.exit()
+        return "Error while trying to get page"
     soup = BeautifulSoup(page.text, 'html.parser')
     return soup
 
@@ -45,15 +46,26 @@ def title(soup):
     title = soup.find("h1", {"class": "TopicDetail__header__headline--inner"}).get_text()
     return title
 
-def summary(soup, sentences=0):
+def summary(soup):
     summary = []
-    i = 0
-    while i <= sentences:
-        # summary.append(soup.find_all('p')[i].get_text())
-        summary.append(soup.findAll("div", {"class": "TopicDetail__abstract"})[i].get_text())
-        i+=1
-    description = "".join(summary)
-    return description
+    summary = soup.find("div", {"class": "TopicDetail__abstract"}).get_text()
+    return summary
+
+def content(soup, sentences=1):
+    content_abstract = soup.find("div", {"class": "TopicDetail__body"})
+    first_section = content_abstract.find("div", {"class": "TopicDetail__overview__block"})
+    text_content = first_section.find("div", {"class": "Editor--article"})
+    if not text_content:
+        print("No content to display.")
+        return
+    try:
+        content = text_content.findAll("p", {"class": "Editor__text"}).get_text()
+    except:
+        return "No content to display"
+    content_sent = sent_tokenize(content)
+    description = " ".join(content_sent[0:sentences])
+    if description:
+        return description
 
 def timeline(soup, events=0):
     timeline_block = soup.findAll("div", {"class": "EntityTimeline"})

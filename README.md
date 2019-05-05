@@ -33,4 +33,6 @@ TO DO
     => Commpany Url
     => Products
     => Country
-- Improve summary query output
+- Hide html output when downloading a new page
+- Improve content query output:
+    => Sentences nb query parameter doesn't always work
