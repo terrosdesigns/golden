@@ -82,27 +82,17 @@ def timeline(soup, events=0):
     events_list = []
     i=0
     while i <= events:
-        if not soup.findAll("div", {"class": "TimelineEvent"}):
-            print("No events to display.")
-            break
         try:
-            event_div = soup.findAll("div", {"class": "TimelineEvent"})[i]
+            event = {}
+            event["date"] = timeline_block[0].findAll("div", {"class": "TimelineEvent__date"})[i].get_text()
+            event["subtitle"] = timeline_block[0].findAll("h3")[i].get_text()
+            event["content"] = timeline_block[0].findAll("p")[i].get_text()
+            events_list.append(event)
         except:
-            print("No more events.")
+            print(i, "events loaded.")
             break
-        event = {}
-        try:
-            event["date"] = event_div.findAll("div", {"class": "TimelineEvent__date"})[i].get_text()
-            event["subtitle"] = event_div.findAll("h3")[0].get_text()
-            event["content"] = event_div.findAll("p")[0].get_text()
-        except:
-            print("No more events.")
-            break
-        events_list.append(event)
         i+=1
-    # events_string = "\n".join(events_list)
-    if events_list:
-        return events_list
+    return events_list
 
 def people(soup, position=''):
     table = soup.find('div', {"class": "table"})
