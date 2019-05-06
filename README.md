@@ -4,12 +4,7 @@ Tech and startup data extraction in Python.
 
 Extract company summaries, timeline of recent events, key people and more.
 
-1/ Install golden module
-```
-pip install golden
-```
-
-2/ Extract key tech and startup data !
+# Usage
 
 ```python
 >>> from golden import golden
@@ -45,8 +40,13 @@ pip install golden
 # David Mayman : Founder, CEO, Test Pilot, Project Manager
 ```
 
+# Installation
+To install golden run following command :
+```
+$ pip install golden
+```
 
-TO DO
+# TO DO
 
 Add new queries :
 - Commpany Url
