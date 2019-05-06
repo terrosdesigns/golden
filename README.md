@@ -2,9 +2,9 @@
 
 Tech and startup data extraction in Python.
 
-Extract company summaries, timeline of recent events, key people and more.
+Extract company summaries, timeline of recent events, key people and more !
 
-# Usage
+## Usage
 
 ```python
 >>> from golden import golden
@@ -40,23 +40,20 @@ Extract company summaries, timeline of recent events, key people and more.
 # David Mayman : Founder, CEO, Test Pilot, Project Manager
 ```
 
-# Installation
+## Installation
 To install golden run following command :
 ```
 $ pip install golden
 ```
 
-# TO DO
+### TO DO
 
-Add new queries :
-- Commpany Url
-- Products
-- Country
-
-Improve suggestion while querying
-
-Hide html output when downloading a new page
-
-Improve content query output:
-- Sentences nb query parameter doesn't always work
+* Add new queries :
+    * Commpany Url
+    * Products
+    * Country
+* Improve suggestion while querying
+* Hide html output when downloading a new page
+* Improve content query output:
+    * Sentences nb query parameter doesn't always work
 
