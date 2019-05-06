@@ -46,7 +46,7 @@ To install golden run following command :
 $ pip install golden
 ```
 
-### TO DO
+## TO DO
 
 * Add new queries :
     * Commpany Url
@@ -57,3 +57,6 @@ $ pip install golden
 * Improve content query output:
     * Sentences nb query parameter doesn't always work
 
+## LICENCE
+Authored and maintained by [Terros Designs](https://terrosdesigns.com)
+MIT licensed. See the LICENSE file for full details.
