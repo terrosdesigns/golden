@@ -1,8 +1,8 @@
 # golden
 
-A python library that makes it easy to access and parse data from Golden's collection.
+Python library built upon [requests](https://github.com/kennethreitz/requests) to access and parse data from [Golden](https://golden.com)'s collection.
 
-Golden is a Wikipedia alternative focuses on emerging tech, startups and ideas.
+[Golden](https://golden.com) is a Wikipedia alternative that focuses on emerging tech, startups and ideas.
 
 Extract company summaries, timeline of recent events, key people and more !
 
