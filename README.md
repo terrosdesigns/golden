@@ -12,8 +12,11 @@ git clone git@github.com:terrosdesigns/golden.git
 2/ Extract key tech and startup data !
 
 ```python
->>> import golden
+>>> from golden import golden
 >>> search = golden.download('Apple')
+
+>>> golden.title(search)
+# 'Apple (company)'
 
 >>> golden.summary(search)
 # Apple Inc. is a public company designing and selling personal computers, smartphones, consumer electronics, and software. Its headquarters is located in Cupertino, California and it was founded in 1976.﻿Apple Inc. is a California-based electronics company with a focus producing on consumer devices.
