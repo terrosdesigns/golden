@@ -1,6 +1,8 @@
 # golden
 
-Tech and startup data extraction in Python.
+A python library that makes it easy to access and parse data from Golden's collection.
+
+Golden is a Wikipedia alternative focuses on emerging tech, startups and ideas.
 
 Extract company summaries, timeline of recent events, key people and more !
 
