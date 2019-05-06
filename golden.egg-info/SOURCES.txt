@@ -1,7 +1,6 @@
 README.md
 setup.py
 golden/golden.py
-golden/tools.py
 golden.egg-info/PKG-INFO
 golden.egg-info/SOURCES.txt
 golden.egg-info/dependency_links.txt
