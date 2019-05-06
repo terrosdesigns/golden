@@ -4,9 +4,9 @@ Tech and startup data extraction in Python.
 
 Extract company summaries, timeline of recent events, key people and more.
 
-1/ Clone repository
+1/ Install golden module
 ```
-git clone git@github.com:terrosdesigns/golden.git
+pip install golden
 ```
 
 2/ Extract key tech and startup data !
@@ -59,3 +59,4 @@ Hide html output when downloading a new page
 
 Improve content query output:
 - Sentences nb query parameter doesn't always work
+
