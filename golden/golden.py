@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import sys
 import nltk
 from nltk import sent_tokenize
+from tools import parse_table
 
 def extractPageContent(url):
     try:
@@ -93,3 +94,29 @@ def timeline(soup, events=0):
     # events_string = "\n".join(events_list)
     if events_list:
         return events_list
+
+def people(soup, position=''):
+    table = soup.find('div', {"class": "table"})
+    rows = table.findAll('div', {"class": "table-row__wrapper"})
+    rows_list = []
+    for row in rows:
+        name = row.findAll("div", {"class": "table-cell"})[0].get_text()
+        role = row.findAll("div", {"class": "table-cell"})[1].get_text()
+        golden_related = row.findAll("div", {"class": "table-cell"})[2].get_text()
+        result = {}
+        result["name"] = name
+        result["role"] = role
+        result["golden_related"] = golden_related
+        rows_list.append(result)
+    # remove first header row
+    rows_list = rows_list[1:]
+    final_list = []
+    if position:
+        for row in rows_list:
+            if position in row["role"]:
+                final_list.append(row)
+    if final_list:
+        return final_list
+    else:
+        return rows_list
+

@@ -27,16 +27,30 @@ git clone git@github.com:terrosdesigns/golden.git
 # March 25, 2019  :  Apple Card
 # On March 25, 2019 during their keynote event Apple, in partnership with Goldman Sachs and Mastercard, announced Apple Card. A credit card by Apple with no fees—no annual, cash-advance, over-the-limit, international, or late fees— thats gives Apple users the ability to sign up for Apple Card using the Apple Wallet application.
 
+>>> other_search = golden.download("jetpack aviation")
+>>> people = golden.people(other_search)
+>>> for p in people:
+>>>     print(p["name"], p["role"])
+# Boris Jarry Employee
+# Daniel Schwarzbaum Employee
+# David Mayman Founder, CEO, Test Pilot, Project Manager
+# Nelson Tyler Founder, Principle Designer
+# Sergey Samchik Employee
+
+>>> ceo = golden.people(other_search, "CEO")
+>>> print(ceo)
+# David Mayman : Founder, CEO, Test Pilot, Project Manager
 ```
 
 
 TO DO
 
 Add new queries :
-- People
 - Commpany Url
 - Products
 - Country
+
+Improve suggestion while querying
 
 Hide html output when downloading a new page
 
