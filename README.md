@@ -62,4 +62,4 @@ $ pip install golden
 ## LICENCE
 Authored and maintained by [Terros Designs](https://terrosdesigns.com)
 
-MIT licensed. See the LICENSE file for full details.
+MIT licensed. See the [LICENSE](https://github.com/terrosdesigns/golden/blob/master/LICENSE) file for full details.
