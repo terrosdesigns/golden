@@ -116,6 +116,8 @@ def people(soup, position=''):
                 final_list.append(row)
     if final_list:
         return final_list
-    else:
+    elif rows_list:
         return rows_list
+    else:
+        return "No people to display for this query."
 
