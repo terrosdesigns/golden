@@ -58,12 +58,22 @@ def content(soup, sentences=1):
     if not text_content:
         print("No content to display.")
         return
-    try:
-        content = text_content.findAll("p", {"class": "Editor__text"}).get_text()
-    except:
+    if len(text_content.findAll("p", {"class": "Editor__text"})) == 0:
         return "No content to display"
-    content_sent = sent_tokenize(content)
-    description = " ".join(content_sent[0:sentences])
+    elif len(text_content.findAll("p", {"class": "Editor__text"})) == 1:
+        try:
+            content = text_content.findAll("p", {"class": "Editor__text"}).get_text()
+        except:
+            return "No content to display"
+        content_sent = sent_tokenize(content)
+        description = " ".join(content_sent[0:sentences])
+    else:
+        i=0
+        content = []
+        while i < len(text_content.findAll("p", {"class": "Editor__text"})):
+            content.append(text_content.findAll("p", {"class": "Editor__text"})[i].get_text())
+            i+=1
+        description = " ".join(content[0:sentences])
     if description:
         return description
 

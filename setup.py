@@ -40,7 +40,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='golden',
-    version='0.1.0',
+    version='0.1.1',
     description='Python library to extract data from tech companies and topics.',
     long_description=long_description,
     author='Terros',

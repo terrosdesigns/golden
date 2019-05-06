@@ -60,6 +60,8 @@ $ pip install golden
     * Sentences nb query parameter doesn't always work
 
 ## LICENCE
-Authored and maintained by [Terros Designs](https://terrosdesigns.com)
+Authored and maintained by [Terros Designs](https://terrosdesigns.com).
+
+Contact me at terrosdesigns@gmail.com for any question / suggestion / comment !
 
 MIT licensed. See the [LICENSE](https://github.com/terrosdesigns/golden/blob/master/LICENSE) file for full details.
