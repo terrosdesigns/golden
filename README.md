@@ -31,11 +31,11 @@ git clone git@github.com:terrosdesigns/golden.git
 
 
 TO DO
-- Add new queries :
-    => People
-    => Commpany Url
-    => Products
-    => Country
-- Hide html output when downloading a new page
-- Improve content query output:
-    => Sentences nb query parameter doesn't always work
+Add new queries :
+- People
+- Commpany Url
+- Products
+- Country
+Hide html output when downloading a new page
+Improve content query output:
+- Sentences nb query parameter doesn't always work
